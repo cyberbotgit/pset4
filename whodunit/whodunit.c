@@ -77,7 +77,14 @@ int main(int argc, char *argv[])
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
         
-          
+           
+            if(triple.rgbtRed == 255 )
+            {
+                triple.rgbtRed = 255;
+                triple.rgbtBlue = 255;
+                triple.rgbtGreen =255;
+                
+            }
             
             
            
