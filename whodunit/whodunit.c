@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
            
             if(triple.rgbtRed == 255 )
             {
-                triple.rgbtRed = 255;
+                triple.rgbtRed = 0;
                 triple.rgbtBlue = 255;
                 triple.rgbtGreen =255;
                 
