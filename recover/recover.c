@@ -51,7 +51,10 @@ int main(int argc, char *argv[])
                 jpg_found = 1;
             }
             
-          
+            char filename[8];
+            sprintf(filename, "%03d.jpg", filecount);
+            picture = fopen(filename, "a");
+            filecount++;
         }
         
         
