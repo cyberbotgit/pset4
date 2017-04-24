@@ -38,7 +38,21 @@ int main(int argc, char *argv[])
     while (fread(buffer, 512, 1, input) == 1)
     {
         // read first 4 bytes of buffer and see if jpg signature using bitwise on last byte
-       
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xe0) == 0xe0)
+        {
+            if (jpg_found == 1)
+            {
+                // We found the start of a new pic so close out current picture
+                fclose(picture);
+            }
+            else
+            {
+                // jpg discovered and now we have the green light to write
+                jpg_found = 1;
+            }
+            
+          
+        }
         
         
         
