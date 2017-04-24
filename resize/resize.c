@@ -97,7 +97,17 @@ int main(int argc, char *argv[])
             // temporary storage
             RGBTRIPLE triple;
 
-          
+            // read RGB triple from infile
+            fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
+            int temp = f;
+            while(temp)
+            {
+                
+            // write RGB triple to outfile
+            fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
+            
+                temp--;
+            }
             
         }
         
