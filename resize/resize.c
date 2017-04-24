@@ -68,6 +68,10 @@ int main(int argc, char *argv[])
       int in_padding = (4 - ((bi.biWidth/f) * sizeof(RGBTRIPLE)) % 4) % 4;
       int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
       
+       bi.biSizeImage = ((sizeof(RGBTRIPLE) * bi.biWidth) + padding) * abs(bi.biHeight) ;
+      
+      
+     bf.bfSize = bi.biSizeImage + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
     // write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
     
