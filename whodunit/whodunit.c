@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
             {
                 triple.rgbtRed = 0;
                 triple.rgbtBlue = 0;
-                triple.rgbtGreen =255;
+                triple.rgbtGreen =0;
                 
             }
             
