@@ -64,7 +64,10 @@ int main(int argc, char *argv[])
    bi.biHeight = bi.biHeight * f;
     bi.biWidth = bi.biWidth * f;
     
-   
+      // determine padding for scanlines
+      int in_padding = (4 - ((bi.biWidth/f) * sizeof(RGBTRIPLE)) % 4) % 4;
+      int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+      
     // write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
     
