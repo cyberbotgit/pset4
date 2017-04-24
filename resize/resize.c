@@ -111,7 +111,15 @@ int main(int argc, char *argv[])
             
         }
         
-  
+        long offset = (bi.biWidth/f) * sizeof(RGBTRIPLE);
+         fseek(inptr, - offset, SEEK_CUR);
+        
+        // then add it back (to demonstrate how)
+      for (int k = 0; k < padding; k++)
+        {
+            fputc(0x00, outptr);
+        }
+        
         count--;
         }
         
