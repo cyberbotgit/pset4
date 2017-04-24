@@ -57,7 +57,11 @@ int main(int argc, char *argv[])
             filecount++;
         }
         
-        
+        if (jpg_found == 1)
+        {
+            // write 512 bytes to file once we start finding jpgs
+            fwrite(&buffer, 512, 1, picture);
+        }
         
     }
 
