@@ -65,7 +65,9 @@ int main(int argc, char *argv[])
         
     }
 
-    
+    // close files
+    fclose(input);
+    fclose(picture);
 
     return 0;
 }
